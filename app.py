@@ -191,10 +191,10 @@ def main():
         st.subheader("Patient's Albumin Level by Age")
         fig = plt.figure()
         ax = fig.subplots()
-        sns.scatterplot(x=df['albumin'],y=df['age'],hue=df['sex'],palette=['green','red'],data=df, legend=False)
-        plt.legend(title='sex', loc='upper left', labels=['Female', 'Male'])
+        g = sns.scatterplot(x=df['albumin'],y=df['age'],hue=df['sex'],palette=['green','red'],data=df)
         ax.set_xlabel('Age')
         ax.set_ylabel('Albumin')
+        plt.legend(labels=["Female","Male"], title="Sex", fontsize = '8', title_fontsize = "9")
         st.pyplot(fig)
         st.markdown("""A high level of albumin is most likely to occur in age between **20 to 60**. This means that patients
                         within such an age group has a higher probability of dying due to hepatitis""")
